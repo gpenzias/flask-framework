@@ -57,20 +57,17 @@ def create_stock_ticker_graph(name_stock_ticker):
   # IMPORTANT NOTE!! The version of BokehJS loaded in the template should match
   # the version of Bokeh installed locally.
 
-#   < link
-#   href = "http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css"
-#   rel = "stylesheet"
-#   type = "text/css"
-# >
-
   template = jinja2.Template("""
   <!DOCTYPE html>
   <html lang="en-US">
-  
-  
+
+  <link
+      href="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css"
+      rel="stylesheet" type="text/css"
+  >
   
   <script 
-      src="http://cdn.pydata.org/bokeh/release/bokeh-2.0.1.min.js"
+      src="https://cdn.pydata.org/bokeh/release/bokeh-2.0.1.min.js"
   ></script>
   
     <head>
