@@ -10,9 +10,6 @@ from bokeh.plotting import figure
 
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = os.path.join('static','img_folder')
-if not os.path.exists(app.config['UPLOAD_FOLDER']):
-  os.mkdir(app.config['UPLOAD_FOLDER'])
 
 app.vars={}
 
@@ -32,14 +29,9 @@ def about():
 
 @app.route('/graph', methods=['GET'])
 def graph():
-  # full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'graph.png')
-  # print(f"full_filename={full_filename}")
-  # return render_template("graph.html", user_image=full_filename)
   print(f"Stock ticker name: {app.vars['name_stock_ticker']}")
   template, script, div = create_stock_ticker_graph(app.vars['name_stock_ticker'])
   return template.render(script=script, div=div)
-
-  # return render_template('graph.html')
 
 ################################################################################################################
 ### Stock ticker code
